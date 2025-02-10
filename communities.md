@@ -293,6 +293,42 @@ The supported parameters are:
 * `query`: limit the returned communities to those with metadata values matching the query terms.
   The query is also used to build a prefix query. It can be used to implement
   an autosuggest feature over the community name
+* `filterQuery`: allows adding an additional query to limit the returned communities.
+   This parameter is suitable for queries in Solr format and will be used as provided
+* `page`, `size` [see pagination](README.md#Pagination)
+
+Return codes:
+* 200 OK - if the operation succeeds
+* 401 Unauthorized - if you are not authenticated
+
+#### findEditAuthorized
+**/api/core/communities/search/findEditAuthorized**
+
+Get the list of all communities the current user is authorized to edit.
+
+The supported parameters are:
+* `query`: limit the returned communities to those with metadata values matching the query terms.
+  The query is also used to build a prefix query. It can be used to implement
+  an autosuggest feature over the community name
+* `filterQuery`: allows adding an additional query to limit the returned communities.
+  This parameter is suitable for queries in Solr format and will be used as provided
+* `page`, `size` [see pagination](README.md#Pagination)
+
+Return codes:
+* 200 OK - if the operation succeeds
+* 401 Unauthorized - if you are not authenticated
+
+#### findAddAuthorized
+**/api/core/communities/search/findAddAuthorized**
+
+Get the list of all communities the current user is authorized to add collections or communities to.
+
+The supported parameters are:
+* `query`: limit the returned communities to those with metadata values matching the query terms.
+  The query is also used to build a prefix query. It can be used to implement
+  an autosuggest feature over the community name
+* `filterQuery`: allows adding an additional query to limit the returned communities.
+  This parameter is suitable for queries in Solr format and will be used as provided
 * `page`, `size` [see pagination](README.md#Pagination)
 
 Return codes:

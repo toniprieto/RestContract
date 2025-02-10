@@ -158,7 +158,7 @@ Return codes:
 The supported parameters are:
 * page, size [see pagination](README.md#Pagination)
 * uuid: mandatory, the uuid of the community
-* entityType: mandatory, the label of the entity type  field the collection must have
+* entityType: mandatory, the label of the entity type field the collection must have
 
 It returns the list of collections where the current user is authorized to submit and deal with the request entity type
 
@@ -181,11 +181,48 @@ The supported parameters are:
 * `query`: limit the returned collections to those with metadata values matching the query terms.
   The query is also used to build a prefix query. It can be used to implement
   an autosuggest feature over the collection name
+* `filterQuery`: allows adding an additional query to limit the returned collections.
+  This parameter is suitable for queries in Solr format and will be used as provided
 * `page`, `size` [see pagination](README.md#Pagination)
 
 Return codes:
 * 200 OK - if the operation succeeds
 * 401 Unauthorized - if you are not authenticated
+
+#### findEditAuthorized
+**/api/core/collections/search/findEditAuthorized**
+
+Get the list of all collections the current user is authorized to edit.
+
+The supported parameters are:
+* `query`: limit the returned collections to those with metadata values matching the query terms.
+  The query is also used to build a prefix query. It can be used to implement
+  an autosuggest feature over the collection name
+* `filterQuery`: allows adding an additional query to limit the returned collections.
+  This parameter is suitable for queries in Solr format and will be used as provided
+* `page`, `size` [see pagination](README.md#Pagination)
+
+Return codes:
+* 200 OK - if the operation succeeds
+* 401 Unauthorized - if you are not authenticated
+
+#### findMapAuthorized
+**/api/core/collections/search/findEditAuthorized**
+
+Get the list of all collections the current user is authorized to map items to.
+
+The supported parameters are:
+* `query`: limit the returned collections to those with metadata values matching the query terms.
+  The query is also used to build a prefix query. It can be used to implement
+  an autosuggest feature over the collection name
+* `filterQuery`: allows adding an additional query to limit the returned collections.
+  This parameter is suitable for queries in Solr format and will be used as provided
+* `page`, `size` [see pagination](README.md#Pagination)
+
+Return codes:
+* 200 OK - if the operation succeeds
+* 401 Unauthorized - if you are not authenticated
+
 
 ## Patch operations
 
